@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>주한·유진에게</title>
+<meta name="description" content="CTO부문 HR담당 EXG팀이 송주한님, 이유진님께 보내는 마음을 모아요.">
+<meta property="og:title" content="주한님, 유진님께 마음을 남겨 주세요">
+<meta property="og:description" content="EXG팀 롤링페이퍼 · 글, 사진, 영상 무엇이든 좋아요 · 11월 30일 마감">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#EBF0E8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Pen+Script&display=swap">
+<style>
+/* Layout: 엽서 같은 히어로(소인 도장) → 받는 사람 탭 → 영상 / 사진 / 글 세 칸의 메시지 벽. 휴대폰 우선, 하단 고정 버튼 */
+:root{
+  --paper:#EBF0E8; --surface:#FAFBF7; --ink:#24302A; --ink-soft:#56665C; --line:#CFD9CC;
+  --accent:#D2652B; --accent-soft:#F6DCCB; --on-accent:#FFFFFF;
+  --juhan:#2B6B66; --yujin:#A3435F; --both:#6B5A8E;
+  --n-sage:#E2ECDA; --n-peach:#FBE2D2; --n-sky:#DCE9F2; --n-lilac:#EBE2F1; --n-butter:#F6ECC6;
+  --shadow:0 1px 2px rgba(36,48,42,.08),0 6px 18px -8px rgba(36,48,42,.18);
+  --f-display:"Gowun Batang","Noto Serif KR","Apple SD Gothic Neo",serif;
+  --f-body:"Gowun Dodum","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-hand:"Nanum Pen Script","Gowun Dodum",cursive;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme:dark;
+    --paper:#151B17; --surface:#1D2520; --ink:#E6ECE4; --ink-soft:#A1AFA5; --line:#2F3B33;
+    --accent:#EE8A50; --accent-soft:#3D2A1F; --on-accent:#1A120C;
+    --juhan:#74BDB5; --yujin:#E792AE; --both:#B2A2D8;
+    --n-sage:#243128; --n-peach:#37281F; --n-sky:#1E2B35; --n-lilac:#2C2535; --n-butter:#33301E;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px -10px rgba(0,0,0,.6);
+  }
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.7;
+  padding:env(safe-area-inset-top,0px) max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));
+  word-break:keep-all;overflow-wrap:anywhere;-webkit-tap-highlight-color:transparent;
+}
+img{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+/* Hero */
+.hero{position:relative;padding-block:48px 28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
+.eyebrow{font-size:13px;letter-spacing:.08em;color:var(--ink-soft);margin:0 0 14px}
+.hero h1{font-family:var(--f-display);font-weight:700;font-size:clamp(30px,6vw,58px);line-height:1.28;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.nm-j{color:var(--juhan)} .nm-y{color:var(--yujin)}
+.lede{max-width:34em;margin:18px 0 0;color:var(--ink-soft);font-size:16px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px}
+.btn{border:0;border-radius:999px;padding:12px 22px;font-size:15.5px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s ease}
+.btn-primary{background:var(--accent);color:var(--on-accent);font-weight:600}
+.btn-primary:active{transform:scale(.98)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.btn-ghost:disabled{opacity:.45}
+.dday{font-size:14px;color:var(--ink-soft)}
+.dday b{color:var(--accent);font-variant-numeric:tabular-nums}
+.stamp{width:150px;aspect-ratio:1;border-radius:50%;border:2px dashed var(--accent);color:var(--accent);display:grid;place-items:center;text-align:center;transform:rotate(-12deg);margin-top:8px;position:relative}
+.stamp::before{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px solid var(--accent);opacity:.6}
+.stamp span{display:block;font-family:var(--f-display);line-height:1.25}
+.stamp .s1{font-size:12px;letter-spacing:.2em}
+.stamp .s2{font-size:26px;font-weight:700;margin:2px 0}
+.stamp .s3{font-size:11px;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.notice{background:var(--accent-soft);border-radius:12px;padding:12px 16px;font-size:14px;margin:0 0 12px}
+
+/* Toolbar */
+.toolbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);padding-block:10px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.toolbar::-webkit-scrollbar{display:none}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.tabs{display:flex;gap:6px;width:max-content}
+.tab{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-size:14px;display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
+.tab .c{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:12.5px}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab[aria-selected="true"] .c{color:inherit;opacity:.75}
+
+/* Sections */
+main{padding-block:8px 40px;display:grid;gap:40px}
+.sec-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;margin:20px 0 16px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.sec-head h2{font-family:var(--f-display);font-size:24px;margin:0;font-weight:700}
+.sec-head .cnt{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:14px}
+.sec-head .sub{margin-left:auto;font-size:13px;color:var(--ink-soft)}
+.grid{columns:3 280px;column-gap:16px}
+.grid.videos{columns:2 340px}
+.empty{border:1.5px dashed var(--line);border-radius:14px;padding:24px 18px;color:var(--ink-soft);text-align:center;font-size:14.5px}
+
+/* Card */
+.card{break-inside:avoid;margin:0 0 16px;border-radius:14px;padding:16px 18px 14px;box-shadow:var(--shadow);background:var(--n-sage);display:flex;flex-direction:column;gap:10px}
+.card[data-c="peach"]{background:var(--n-peach)} .card[data-c="sky"]{background:var(--n-sky)}
+.card[data-c="lilac"]{background:var(--n-lilac)} .card[data-c="butter"]{background:var(--n-butter)}
+.to{font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.to::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.to.juhan{color:var(--juhan)} .to.yujin{color:var(--yujin)} .to.both{color:var(--both)}
+.msg{white-space:pre-wrap;margin:0;font-size:15.5px}
+.media{display:grid;gap:6px;grid-template-columns:repeat(2,1fr);border-radius:10px;overflow:hidden}
+.media.one{grid-template-columns:1fr}
+.media img{width:100%;max-width:100%;object-fit:cover;aspect-ratio:1;display:block;cursor:zoom-in;background:var(--line)}
+.media.one img{aspect-ratio:auto;max-height:520px;object-fit:contain;background:transparent}
+.media video{width:100%;max-width:100%;display:block;border-radius:10px;background:#000;max-height:480px}
+.media .vwrap{grid-column:1/-1}
+.miss{display:grid;place-items:center;aspect-ratio:4/3;background:var(--line);color:var(--ink-soft);font-size:13px;border-radius:8px;padding:8px;text-align:center}
+.foot{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.from{font-family:var(--f-hand);font-size:23px;line-height:1.1}
+.date{font-size:12.5px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.acts{margin-left:auto;display:flex;gap:2px}
+.acts button{background:none;border:0;font-size:13px;color:var(--ink-soft);padding:6px 8px;border-radius:6px}
+
+/* Bottom bar (mobile first) */
+.bar{position:fixed;z-index:20;left:0;right:0;bottom:0;display:flex;gap:10px;align-items:center;justify-content:flex-end;
+  padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  pointer-events:none}
+.bar > *{pointer-events:auto}
+.bar .write{box-shadow:var(--shadow)}
+.bgm{background:var(--ink);color:var(--paper);border:0;border-radius:999px;padding:12px 16px 12px 13px;display:flex;align-items:center;gap:9px;font-size:14px;box-shadow:var(--shadow)}
+.eq{display:inline-flex;gap:2px;align-items:flex-end;height:14px}
+.eq i{width:3px;background:currentColor;height:4px;border-radius:1px}
+.bgm.on .eq i{animation:eq 1.2s ease-in-out infinite}
+.bgm.on .eq i:nth-child(2){animation-delay:.2s}.bgm.on .eq i:nth-child(3){animation-delay:.45s}
+@keyframes eq{0%,100%{height:4px}50%{height:14px}}
+footer{color:var(--ink-soft);font-size:13px;text-align:center;padding-block:0 110px}
+
+/* Sheets */
+.overlay{position:fixed;inset:0;z-index:30;background:rgba(18,24,20,.55);display:flex;align-items:center;justify-content:center;
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.sheet{background:var(--surface);color:var(--ink);border-radius:18px;width:min(560px,100%);max-height:100%;overflow:auto;-webkit-overflow-scrolling:touch;padding:24px;box-shadow:0 24px 60px -20px rgba(0,0,0,.5)}
+.sheet h3{font-family:var(--f-display);font-size:22px;margin:0 0 4px}
+.hint{color:var(--ink-soft);font-size:13.5px;margin:0 0 18px}
+.field{display:grid;gap:6px;margin-bottom:16px}
+.field > label,.field > .lab{font-size:14px;font-weight:600}
+.field small{color:var(--ink-soft);font-size:12.5px;font-weight:400}
+.inp{width:100%;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:11px 12px;font-size:16px}
+textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:transparent;border-radius:999px;padding:8px 14px;font-size:14.5px}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);font-weight:600}
+.swatches{display:flex;gap:12px}
+.sw{width:34px;height:34px;border-radius:50%;border:2px solid var(--line);padding:0}
+.sw[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 3px var(--surface) inset}
+.attach{display:flex;flex-wrap:wrap;gap:8px}
+.attach .btn{flex:1 1 140px}
+.previews{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.pv{position:relative;width:76px;height:76px;border-radius:10px;overflow:hidden;background:var(--line)}
+.pv img,.pv video{width:100%;height:100%;object-fit:cover}
+.pv .tag{position:absolute;left:4px;bottom:4px;font-size:10.5px;background:rgba(0,0,0,.6);color:#fff;border-radius:4px;padding:0 4px}
+.pv button{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;border:0;background:rgba(0,0,0,.65);color:#fff;font-size:14px;line-height:1}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.err{color:var(--yujin);font-size:13.5px;min-height:1.2em;margin:0 0 8px}
+.sheet-actions{display:flex;justify-content:flex-end;gap:10px}
+.lightbox{background:rgba(0,0,0,.9)}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+.toast{position:fixed;z-index:40;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 84px);background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:10px;font-size:14px;max-width:calc(100% - 32px);text-align:center}
+
+@media (max-width:640px){
+  .hero{grid-template-columns:1fr;padding-top:30px}
+  .stamp{width:96px;position:absolute;right:0;top:18px}
+  .stamp .s2{font-size:18px}.stamp .s1,.stamp .s3{font-size:9px}
+  .hero h1{padding-right:88px;font-size:30px}
+  .hero-actions .btn-primary{display:none}
+  .sec-head .sub{margin-left:0;flex-basis:100%}
+  .row2{grid-template-columns:1fr}
+  .overlay{align-items:flex-end;padding:max(12px,env(safe-area-inset-top,0px)) 0 0}
+  .sheet{border-radius:18px 18px 0 0;width:100%;padding:22px max(18px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px))}
+  .lightbox{align-items:center;padding:12px}
+  .sheet-actions .btn{flex:1}
+}
+@media (min-width:641px){ .bar .write{display:none} }
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">CTO부문 HR담당 EXG팀이 보내는 마음</p>
+      <h1><span class="nm-j">주한님</span>, <span class="nm-y">유진님</span><br>함께여서 따뜻했어요</h1>
+      <p class="lede">사람을 키우고 조직의 온도를 함께 만들어 온 두 분께, 같이 보낸 시간을 담아 전하려고 해요. 하고 싶은 말이나 사진, 영상 중 편한 걸로 남겨 주세요. 11월 30일까지 모아서 두 분께 각자의 기념 앨범으로 전해 드릴게요.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" id="openCompose" type="button">마음 남기기</button>
+        <span class="dday" id="dday"></span>
+      </div>
+    </div>
+    <div class="stamp" aria-hidden="true">
+      <div><span class="s1">EXG TEAM</span><span class="s2">고마워요</span><span class="s3">2026 · 11 · 30</span></div>
+    </div>
+  </header>
+
+  <p class="notice" id="notice" hidden></p>
+
+  <nav class="toolbar" aria-label="받는 사람">
+    <div class="tabs" role="tablist" id="tabs"></div>
+  </nav>
+
+  <main>
+    <section aria-labelledby="h-video">
+      <div class="sec-head"><h2 id="h-video">영상</h2><span class="cnt" id="c-video">0</span><span class="sub">함께한 순간을 움직이는 그대로</span></div>
+      <div id="g-video"></div>
+    </section>
+    <section aria-labelledby="h-photo">
+      <div class="sec-head"><h2 id="h-photo">사진</h2><span class="cnt" id="c-photo">0</span><span class="sub">회의실, 워크숍, 회식 자리에서</span></div>
+      <div id="g-photo"></div>
+    </section>
+    <section aria-labelledby="h-text">
+      <div class="sec-head"><h2 id="h-text">글</h2><span class="cnt" id="c-text">0</span><span class="sub">꾹꾹 눌러 쓴 한마디</span></div>
+      <div id="g-text"></div>
+    </section>
+  </main>
+  <footer>CTO부문 HR담당 EXG팀 · 인재육성과 조직문화를 함께 만들어 온 시간들</footer>
+</div>
+
+<div class="bar">
+  <button class="btn btn-primary write" id="openCompose2" type="button">마음 남기기</button>
+  <button class="bgm" id="bgm" type="button" aria-pressed="false"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span id="bgmLabel">배경음</span></button>
+</div>
+
+<!-- 글쓰기 -->
+<div class="overlay" id="composeOv" hidden>
+  <form class="sheet" id="composeForm" role="dialog" aria-modal="true" aria-labelledby="composeTitle" novalidate>
+    <h3 id="composeTitle">마음 남기기</h3>
+    <p class="hint" id="composeHint">글, 사진, 영상 중 하나만 있어도 괜찮아요.</p>
+
+    <div class="field">
+      <span class="lab">누구에게 전할까요?</span>
+      <div class="chips" id="toChips">
+        <button type="button" class="chip" data-to="juhan" aria-pressed="false">송주한님께</button>
+        <button type="button" class="chip" data-to="yujin" aria-pressed="false">이유진님께</button>
+        <button type="button" class="chip" data-to="both" aria-pressed="true">두 분 모두에게</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="fMsg">하고 싶은 말 <small>(선택)</small></label>
+      <textarea class="inp" id="fMsg" maxlength="2000" placeholder="처음 만났던 날, 같이 준비했던 교육, 늦게까지 남았던 날…"></textarea>
+    </div>
+
+    <div class="field" id="mediaField">
+      <span class="lab">사진 · 영상 <small>(선택 · 사진 6장, 영상 1개 50MB까지)</small></span>
+      <div class="attach">
+        <button type="button" class="btn btn-ghost" id="addPhoto">사진 추가</button>
+        <button type="button" class="btn btn-ghost" id="addVideo">영상 추가</button>
+        <input type="file" id="fPhoto" accept="image/*" multiple hidden>
+        <input type="file" id="fVideo" accept="video/*" hidden>
+      </div>
+      <div class="previews" id="previews"></div>
+    </div>
+
+    <div class="field">
+      <span class="lab">카드 색</span>
+      <div class="swatches" id="swatches">
+        <button type="button" class="sw" data-c="sage" style="background:var(--n-sage)" aria-label="세이지" aria-pressed="true"></button>
+        <button type="button" class="sw" data-c="peach" style="background:var(--n-peach)" aria-label="복숭아" aria-pressed="false"></button>
+        <button type="button" class="sw" data-c="sky" style="background:var(--n-sky)" aria-label="하늘" aria-pressed="false"></button>
+        <button type="button" class="sw" data-c="lilac" style="background:var(--n-lilac)" aria-label="라일락" aria-pressed="false"></button>
+        <button type="button" class="sw" data-c="butter" style="background:var(--n-butter)" aria-label="버터" aria-pressed="false"></button>
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label for="fName">보내는 사람 <small>(비우면 익명)</small></label>
+        <input class="inp" id="fName" maxlength="30" placeholder="익명" autocomplete="off">
+      </div>
+      <div class="field" id="pwField">
+        <label for="fPw">비밀번호 <small>(수정·삭제할 때 필요해요)</small></label>
+        <input class="inp" id="fPw" type="password" maxlength="40" placeholder="4자 이상" autocomplete="new-password">
+      </div>
+    </div>
+
+    <p class="err" id="composeErr" role="alert"></p>
+    <div class="sheet-actions">
+      <button type="button" class="btn btn-ghost" data-close>취소</button>
+      <button type="submit" class="btn btn-primary" id="submitBtn">남기기</button>
+    </div>
+  </form>
+</div>
+
+<!-- 비밀번호 확인 -->
+<div class="overlay" id="pwOv" hidden>
+  <form class="sheet" id="pwForm" role="dialog" aria-modal="true" aria-labelledby="pwTitle" novalidate>
+    <h3 id="pwTitle">비밀번호 확인</h3>
+    <p class="hint" id="pwHint">글을 남길 때 정한 비밀번호를 입력해 주세요.</p>
+    <div class="field">
+      <label for="pwInput">비밀번호</label>
+      <input class="inp" id="pwInput" type="password" autocomplete="off">
+    </div>
+    <p class="err" id="pwErr" role="alert"></p>
+    <div class="sheet-actions">
+      <button type="button" class="btn btn-ghost" data-close>취소</button>
+      <button type="submit" class="btn btn-primary" id="pwBtn">확인</button>
+    </div>
+  </form>
+</div>
+
+<div class="overlay lightbox" id="lightbox" hidden><img id="lbImg" alt="크게 보기"></div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* ====== 설정: Supabase 프로젝트 정보 (Project Settings > API) ====== */
+const SUPABASE_URL = 'https://isudtnzbiuyqspshofyk.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_j0-ASerOZhVVRpIXvxW3mg_vcDL8_Ci';
+/* ================================================================== */
+
+(() => {
+  const DEADLINE = new Date(2026, 10, 30);
+  const RECIP = { juhan: '송주한님', yujin: '이유진님', both: '주한님·유진님' };
+  const S = { posts: [], filter: 'all', ready: false, ok: false, pwCache: {} };
+  const $ = id => document.getElementById(id);
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const CONFIGURED = !/YOUR-/.test(SUPABASE_URL + SUPABASE_KEY);
+  const BASE = SUPABASE_URL.replace(/\/+$/, '');
+
+  /* ---------- Supabase REST ---------- */
+  function headers(extra) {
+    const h = Object.assign({ apikey: SUPABASE_KEY }, extra || {});
+    if (SUPABASE_KEY.startsWith('eyJ')) h.Authorization = 'Bearer ' + SUPABASE_KEY;
+    return h;
+  }
+  async function api(path, opts) {
+    const r = await fetch(BASE + path, Object.assign({}, opts, { headers: headers(Object.assign({ 'Content-Type': 'application/json' }, (opts || {}).headers)) }));
+    const txt = await r.text();
+    let body = null; try { body = txt ? JSON.parse(txt) : null; } catch (_) { body = txt; }
+    if (!r.ok) { const e = new Error((body && body.message) || ('http_' + r.status)); e.status = r.status; throw e; }
+    return body;
+  }
+  const rpc = (fn, args) => api('/rest/v1/rpc/' + fn, { method: 'POST', body: JSON.stringify(args) });
+  const fetchPosts = () => api('/rest/v1/posts?select=id,to_whom,name,message,color,media,created_at,edited_at&order=created_at.desc', { method: 'GET' });
+  const publicUrl = p => BASE + '/storage/v1/object/public/media/' + p.split('/').map(encodeURIComponent).join('/');
+
+  function upload(blob, path, type, onProgress) {
+    return new Promise((res, rej) => {
+      const x = new XMLHttpRequest();
+      x.open('POST', BASE + '/storage/v1/object/media/' + path);
+      const h = headers({ 'Content-Type': type, 'x-upsert': 'false', 'cache-control': '31536000' });
+      for (const k in h) x.setRequestHeader(k, h[k]);
+      x.upload.onprogress = e => { if (e.lengthComputable && onProgress) onProgress(e.loaded / e.total); };
+      x.onload = () => {
+        if (x.status >= 200 && x.status < 300) return res(path);
+        let m = ''; try { m = JSON.parse(x.responseText).message || ''; } catch (_) {}
+        const e = new Error(m || 'upload_' + x.status); e.status = x.status; rej(e);
+      };
+      x.onerror = () => rej(new Error('network'));
+      x.send(blob);
+    });
+  }
+
+  /* ---------- D-day ---------- */
+  (function () {
+    const t = new Date(); t.setHours(0, 0, 0, 0);
+    const n = Math.round((DEADLINE - t) / 86400000);
+    const box = $('dday');
+    if (n > 0) { box.append('11월 30일 마감 · '); box.append(el('b', null, 'D-' + n)); }
+    else if (n === 0) box.append(el('b', null, '오늘 마감이에요'));
+    else box.textContent = '모으기가 끝났어요. 남겨 주신 마음 고맙습니다.';
+  })();
+
+  let toastT;
+  function toast(msg) { const t = $('toast'); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => t.hidden = true, 2600); }
+  function notice(msg) { const n = $('notice'); n.textContent = msg || ''; n.hidden = !msg; }
+
+  /* ---------- Render ---------- */
+  const TABS = [['all', '전체'], ['juhan', '주한님께'], ['yujin', '유진님께'], ['both', '두 분께']];
+  function renderTabs() {
+    const box = $('tabs'); box.textContent = '';
+    for (const [k, label] of TABS) {
+      const n = k === 'all' ? S.posts.length : S.posts.filter(p => p.to_whom === k).length;
+      const b = el('button', 'tab'); b.type = 'button'; b.setAttribute('role', 'tab');
+      b.setAttribute('aria-selected', String(S.filter === k));
+      b.append(label, el('span', 'c', String(n)));
+      b.onclick = () => { S.filter = k; render(); };
+      box.append(b);
+    }
+  }
+  const validPath = p => typeof p === 'string' && /^[A-Za-z0-9_\-./]+$/.test(p) && !p.includes('..');
+  const mediaOf = p => (Array.isArray(p.media) ? p.media : []).filter(m => m && validPath(m.path) && (m.kind === 'image' || m.kind === 'video'));
+  const kindOf = p => { const m = mediaOf(p); return m.some(x => x.kind === 'video') ? 'video' : m.length ? 'photo' : 'text'; };
+  const fmtDate = s => { const d = new Date(s); return (d.getMonth() + 1) + '.' + d.getDate(); };
+
+  function card(p) {
+    const c = el('article', 'card'); c.dataset.c = ['sage','peach','sky','lilac','butter'].includes(p.color) ? p.color : 'sage';
+    const to = RECIP[p.to_whom] ? p.to_whom : 'both';
+    c.append(el('span', 'to ' + to, 'To. ' + RECIP[to]));
+    const media = mediaOf(p);
+    if (media.length) {
+      const imgs = media.filter(m => m.kind === 'image');
+      const box = el('div', 'media' + (imgs.length <= 1 ? ' one' : ''));
+      for (const m of media) {
+        if (m.kind === 'video') {
+          const w = el('div', 'vwrap');
+          const v = document.createElement('video');
+          v.src = publicUrl(m.path) + '#t=0.1'; v.controls = true; v.preload = 'metadata';
+          v.setAttribute('playsinline', ''); v.setAttribute('webkit-playsinline', '');
+          v.onerror = () => {
+            const a = el('a', 'miss', '이 기기에서 바로 재생되지 않아요. 눌러서 열어 보세요');
+            a.href = publicUrl(m.path); a.target = '_blank'; a.rel = 'noopener'; v.replaceWith(a);
+          };
+          w.append(v); box.append(w);
+        } else {
+          const i = document.createElement('img');
+          i.src = publicUrl(m.path); i.alt = '함께한 순간 사진'; i.loading = 'lazy';
+          i.onclick = () => { $('lbImg').src = i.src; $('lightbox').hidden = false; };
+          i.onerror = () => i.replaceWith(el('div', 'miss', '사진을 불러올 수 없어요'));
+          box.append(i);
+        }
+      }
+      c.append(box);
+    }
+    if (p.message) c.append(el('p', 'msg', p.message));
+    const f = el('div', 'foot');
+    f.append(el('span', 'from', 'From. ' + (p.name || '익명')), el('span', 'date', fmtDate(p.created_at)));
+    const a = el('div', 'acts');
+    const e = el('button', null, '수정'); e.type = 'button'; e.onclick = () => askPw(p, 'edit');
+    const d = el('button', null, '삭제'); d.type = 'button'; d.onclick = () => askPw(p, 'delete');
+    a.append(e, d); f.append(a); c.append(f);
+    return c;
+  }
+
+  const EMPTY = {
+    video: '아직 올라온 영상이 없어요. 짧은 인사 영상도 좋아요.',
+    photo: '아직 올라온 사진이 없어요. 휴대폰 앨범 속 그날을 꺼내 주세요.',
+    text: '아직 남겨진 글이 없어요. 첫 마음을 남겨 주세요.'
+  };
+  function render() {
+    renderTabs();
+    const list = S.posts.filter(p => S.filter === 'all' || p.to_whom === S.filter);
+    for (const k of ['video', 'photo', 'text']) {
+      const items = list.filter(p => kindOf(p) === k);
+      $('c-' + k).textContent = items.length;
+      const host = $('g-' + k); host.textContent = '';
+      if (!items.length) { host.append(el('div', 'empty', S.ready ? EMPTY[k] : '불러오는 중이에요…')); continue; }
+      const g = el('div', 'grid' + (k === 'video' ? ' videos' : ''));
+      items.forEach(p => g.append(card(p)));
+      host.append(g);
+    }
+  }
+
+  async function load(quiet) {
+    try {
+      S.posts = await fetchPosts() || [];
+      S.ready = true; S.ok = true; notice(''); render();
+    } catch (e) {
+      S.ready = true; render();
+      if (!quiet) notice('메시지를 불러오지 못했어요. 인터넷 연결을 확인하고 새로고침해 주세요.');
+    }
+  }
+
+  /* ---------- Compose ---------- */
+  const C = { to: 'both', color: 'sage', files: [], editing: null, editPw: '' };
+  const MAX_PHOTO = 6, MAX_VIDEO = 50 * 1024 * 1024;
+  function setPressed(boxId, attr, val) { $(boxId).querySelectorAll('[data-' + attr + ']').forEach(b => b.setAttribute('aria-pressed', String(b.dataset[attr] === val))); }
+  $('toChips').onclick = e => { const b = e.target.closest('[data-to]'); if (!b) return; C.to = b.dataset.to; setPressed('toChips', 'to', C.to); };
+  $('swatches').onclick = e => { const b = e.target.closest('[data-c]'); if (!b) return; C.color = b.dataset.c; setPressed('swatches', 'c', C.color); };
+
+  function renderPreviews() {
+    const box = $('previews'); box.textContent = '';
+    C.files.forEach((f, i) => {
+      const d = el('div', 'pv');
+      if (f.kind === 'video') { const v = document.createElement('video'); v.src = f.url + '#t=0.1'; v.muted = true; v.setAttribute('playsinline', ''); v.preload = 'metadata'; d.append(v, el('span', 'tag', '영상')); }
+      else { const im = document.createElement('img'); im.src = f.url; im.alt = ''; d.append(im); }
+      const x = el('button', null, '×'); x.type = 'button'; x.setAttribute('aria-label', '빼기');
+      x.onclick = () => { URL.revokeObjectURL(f.url); C.files.splice(i, 1); renderPreviews(); };
+      d.append(x); box.append(d);
+    });
+  }
+  $('addPhoto').onclick = () => $('fPhoto').click();
+  $('addVideo').onclick = () => $('fVideo').click();
+  $('fPhoto').onchange = e => {
+    const err = $('composeErr'); err.textContent = '';
+    for (const file of e.target.files) {
+      if (C.files.filter(f => f.kind === 'image').length >= MAX_PHOTO) { err.textContent = '사진은 한 번에 ' + MAX_PHOTO + '장까지 올릴 수 있어요.'; break; }
+      C.files.push({ kind: 'image', file, url: URL.createObjectURL(file) });
+    }
+    e.target.value = ''; renderPreviews();
+  };
+  $('fVideo').onchange = e => {
+    const err = $('composeErr'); err.textContent = '';
+    const file = e.target.files[0]; e.target.value = '';
+    if (!file) return;
+    const type = videoType(file);
+    if (!type) { err.textContent = 'MP4, MOV, WebM 영상만 올릴 수 있어요.'; return; }
+    if (file.size > MAX_VIDEO) { err.textContent = '영상은 50MB까지 올릴 수 있어요. 30초 안팎으로 잘라서 올려 주세요. (지금 ' + Math.round(file.size / 1048576) + 'MB)'; return; }
+    C.files.filter(f => f.kind === 'video').forEach(f => URL.revokeObjectURL(f.url));
+    C.files = C.files.filter(f => f.kind !== 'video');
+    C.files.push({ kind: 'video', file, url: URL.createObjectURL(file), type }); renderPreviews();
+  };
+  function videoType(file) {
+    const t = (file.type || '').toLowerCase();
+    if (['video/mp4', 'video/quicktime', 'video/webm'].includes(t)) return t;
+    const ext = (file.name.split('.').pop() || '').toLowerCase();
+    return { mp4: 'video/mp4', m4v: 'video/mp4', mov: 'video/quicktime', webm: 'video/webm' }[ext] || '';
+  }
+
+  function loadImg(file) {
+    return new Promise((res, rej) => { const u = URL.createObjectURL(file); const i = new Image(); i.onload = () => res(i); i.onerror = () => rej(new Error('img')); i.src = u; });
+  }
+  async function compress(file) {
+    const img = await loadImg(file);
+    const r = Math.min(1, 1800 / Math.max(img.naturalWidth, img.naturalHeight));
+    const cv = document.createElement('canvas');
+    cv.width = Math.round(img.naturalWidth * r); cv.height = Math.round(img.naturalHeight * r);
+    const ctx = cv.getContext('2d'); ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, cv.width, cv.height);
+    ctx.drawImage(img, 0, 0, cv.width, cv.height);
+    return new Promise((res, rej) => cv.toBlob(b => b ? res(b) : rej(new Error('img')), 'image/jpeg', 0.86));
+  }
+  const rid = () => (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2));
+  const day = () => { const d = new Date(); return d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0'); };
+
+  function openCompose(edit) {
+    if (!CONFIGURED) { toast('아직 준비 중이에요'); return; }
+    C.editing = edit || null;
+    C.files.forEach(f => URL.revokeObjectURL(f.url)); C.files = []; renderPreviews();
+    C.to = edit ? edit.to_whom : (S.filter !== 'all' ? S.filter : 'both');
+    C.color = edit ? (edit.color || 'sage') : 'sage';
+    setPressed('toChips', 'to', C.to); setPressed('swatches', 'c', C.color);
+    $('fMsg').value = edit ? (edit.message || '') : '';
+    $('fName').value = edit ? (edit.name || '') : '';
+    $('fPw').value = '';
+    $('pwField').hidden = !!edit;
+    $('mediaField').hidden = !!edit;
+    $('composeTitle').textContent = edit ? '글 고치기' : '마음 남기기';
+    $('composeHint').textContent = edit ? '받는 사람, 글, 이름, 카드 색을 고칠 수 있어요. 사진·영상을 바꾸려면 삭제한 뒤 다시 올려 주세요.' : '글, 사진, 영상 중 하나만 있어도 괜찮아요.';
+    $('submitBtn').textContent = edit ? '저장' : '남기기';
+    $('composeErr').textContent = '';
+    $('composeOv').hidden = false;
+  }
+  $('openCompose').onclick = () => openCompose();
+  $('openCompose2').onclick = () => openCompose();
+
+  function friendly(e) {
+    const m = (e && e.message) || '';
+    if (/pw_short/.test(m)) return '비밀번호를 4자 이상 정해 주세요.';
+    if (/empty/.test(m)) return '글이나 사진, 영상 중 하나는 남겨 주세요.';
+    if (/too_many/.test(m)) return '사진·영상이 너무 많아요. 7개 이하로 줄여 주세요.';
+    if (/img/.test(m)) return '사진을 읽지 못했어요. 다른 사진으로 다시 골라 주세요.';
+    if (/network/.test(m)) return '인터넷 연결이 끊겼어요. 와이파이나 데이터를 확인하고 다시 눌러 주세요.';
+    if (/size|large|413/.test(m) || (e && e.status === 413)) return '파일이 너무 커요. 영상은 50MB 이하로 줄여 주세요.';
+    if (/mime|type/i.test(m)) return '이 형식은 올릴 수 없어요. 사진은 JPG·PNG, 영상은 MP4·MOV로 올려 주세요.';
+    return '올리지 못했어요. 잠시 뒤 다시 눌러 주세요.';
+  }
+
+  $('composeForm').onsubmit = async e => {
+    e.preventDefault();
+    const err = $('composeErr'); err.textContent = '';
+    const message = $('fMsg').value.trim();
+    const name = $('fName').value.trim();
+    const btn = $('submitBtn');
+
+    if (C.editing) {
+      if (!message && !mediaOf(C.editing).length) { err.textContent = '글을 모두 지우려면 삭제를 눌러 주세요.'; return; }
+      btn.disabled = true; btn.textContent = '저장하는 중…';
+      try {
+        const ok = await rpc('update_post', { p_id: C.editing.id, p_pw: C.editPw, p_to: C.to, p_name: name, p_message: message, p_color: C.color });
+        if (!ok) throw new Error('pw');
+        $('composeOv').hidden = true; toast('고쳤어요'); load(true);
+      } catch (x) { err.textContent = x.message === 'pw' ? '비밀번호가 바뀌었거나 맞지 않아요.' : '저장하지 못했어요. 잠시 뒤 다시 시도해 주세요.'; }
+      btn.disabled = false; btn.textContent = '저장';
+      return;
+    }
+
+    const pw = $('fPw').value;
+    if (!message && !C.files.length) { err.textContent = '글이나 사진, 영상 중 하나는 남겨 주세요.'; return; }
+    if (pw.length < 4) { err.textContent = '비밀번호를 4자 이상 정해 주세요. 나중에 고치거나 지울 때 필요해요.'; return; }
+
+    btn.disabled = true;
+    try {
+      const media = [];
+      const total = C.files.length;
+      for (let i = 0; i < total; i++) {
+        const f = C.files[i];
+        const label = p => { btn.textContent = '올리는 중 ' + (i + 1) + '/' + total + (p != null ? ' · ' + Math.round(p * 100) + '%' : ''); };
+        label(0);
+        if (f.kind === 'video') {
+          const ext = { 'video/mp4': 'mp4', 'video/quicktime': 'mov', 'video/webm': 'webm' }[f.type];
+          const path = day() + '/' + rid() + '.' + ext;
+          await upload(f.file, path, f.type, label);
+          media.push({ kind: 'video', path });
+        } else {
+          const blob = await compress(f.file);
+          const path = day() + '/' + rid() + '.jpg';
+          await upload(blob, path, 'image/jpeg', label);
+          media.push({ kind: 'image', path });
+        }
+      }
+      btn.textContent = '저장하는 중…';
+      await rpc('create_post', { p_to: C.to, p_name: name, p_message: message, p_color: C.color, p_media: media, p_pw: pw });
+      $('composeOv').hidden = true;
+      toast('마음이 전해졌어요. 고맙습니다!');
+      S.filter = 'all'; load(true);
+    } catch (x) { err.textContent = friendly(x); }
+    btn.disabled = false; btn.textContent = '남기기';
+  };
+
+  /* ---------- Password ---------- */
+  let pending = null;
+  function askPw(p, mode) {
+    pending = { p, mode };
+    $('pwTitle').textContent = mode === 'edit' ? '글 고치기' : '글 삭제하기';
+    $('pwHint').textContent = mode === 'delete' ? '글을 남길 때 정한 비밀번호를 입력해 주세요. 삭제하면 되돌릴 수 없어요.' : '글을 남길 때 정한 비밀번호를 입력해 주세요.';
+    $('pwBtn').textContent = mode === 'edit' ? '확인' : '삭제';
+    $('pwInput').value = ''; $('pwErr').textContent = '';
+    $('pwOv').hidden = false;
+  }
+  $('pwForm').onsubmit = async e => {
+    e.preventDefault();
+    if (!pending) return;
+    const { p, mode } = pending;
+    const pw = $('pwInput').value;
+    const btn = $('pwBtn'); btn.disabled = true;
+    try {
+      if (mode === 'edit') {
+        const ok = await rpc('check_post_pw', { p_id: p.id, p_pw: pw });
+        if (!ok) { $('pwErr').textContent = '비밀번호가 맞지 않아요.'; return; }
+        C.editPw = pw; $('pwOv').hidden = true; openCompose(p);
+      } else {
+        const ok = await rpc('delete_post', { p_id: p.id, p_pw: pw });
+        if (!ok) { $('pwErr').textContent = '비밀번호가 맞지 않아요.'; return; }
+        $('pwOv').hidden = true; toast('삭제했어요'); load(true);
+      }
+    } catch (x) { $('pwErr').textContent = '확인하지 못했어요. 인터넷 연결을 확인해 주세요.'; }
+    finally { btn.disabled = false; }
+  };
+
+  /* ---------- Overlays ---------- */
+  document.querySelectorAll('[data-close]').forEach(b => b.onclick = () => { b.closest('.overlay').hidden = true; });
+  $('lightbox').onclick = () => { $('lightbox').hidden = true; };
+  document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) o.hidden = true; }));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay').forEach(o => { o.hidden = true; }); });
+
+  /* ---------- BGM: Web Audio로 직접 연주하는 오르골 + 부드러운 패드 ---------- */
+  const B = { ctx: null, master: null, bus: null, on: false, next: 0, bar: 0, timer: null };
+  const mtof = m => 440 * Math.pow(2, (m - 69) / 12);
+  const PROG = [[53, 57, 60, 64], [50, 53, 57, 60], [46, 50, 53, 57], [48, 52, 55, 58]]; // Fmaj7 · Dm7 · B♭maj7 · C7
+  const BAR = 60 / 66 * 4;
+  function reverb(ctx) {
+    const len = Math.floor(ctx.sampleRate * 3.2), buf = ctx.createBuffer(2, len, ctx.sampleRate);
+    for (let ch = 0; ch < 2; ch++) { const d = buf.getChannelData(ch); for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.6); }
+    const c = ctx.createConvolver(); c.buffer = buf; return c;
+  }
+  function tone(freq, t, dur, type, gain, attack) {
+    const o = B.ctx.createOscillator(), g = B.ctx.createGain();
+    o.type = type; o.frequency.value = freq;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(gain, t + attack);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g); g.connect(B.bus); o.start(t); o.stop(t + dur + 0.05);
+  }
+  function scheduleBar(t, n) {
+    const ch = PROG[n % 4];
+    ch.forEach(m => { tone(mtof(m), t, BAR + 1.2, 'sine', 0.035, 1.4); tone(mtof(m) * 1.003, t, BAR + 1.2, 'sine', 0.02, 1.6); });
+    tone(mtof(ch[0] - 12), t, BAR, 'sine', 0.06, 0.4);
+    const pool = ch.map(m => m + 12).concat(ch.map(m => m + 24)).sort((a, b) => a - b);
+    const eighth = BAR / 8;
+    const pattern = (n % 8 < 4) ? [0, 2, 4, 5, 6, 4, 3, 1] : [5, 6, 7, 5, 4, 2, 3, 1];
+    pattern.forEach((idx, i) => {
+      if (i % 2 && Math.random() < 0.18) return;
+      const m = pool[Math.min(idx, pool.length - 1)];
+      const tt = t + i * eighth + Math.random() * 0.02;
+      tone(mtof(m), tt, 1.9, 'triangle', 0.05, 0.008);
+      tone(mtof(m) * 2, tt, 0.9, 'sine', 0.012, 0.005);
+    });
+  }
+  function tick() { while (B.next < B.ctx.currentTime + 1.0) { scheduleBar(B.next, B.bar++); B.next += BAR; } }
+  async function bgmToggle() {
+    try {
+      if (!B.ctx) {
+        B.ctx = new (window.AudioContext || window.webkitAudioContext)();
+        B.master = B.ctx.createGain(); B.master.gain.value = 0;
+        B.bus = B.ctx.createGain();
+        const rv = reverb(B.ctx), wet = B.ctx.createGain(); wet.gain.value = 0.55;
+        const lp = B.ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 3200;
+        B.bus.connect(lp); lp.connect(B.master); lp.connect(rv); rv.connect(wet); wet.connect(B.master);
+        B.master.connect(B.ctx.destination);
+      }
+      if (!B.on) {
+        await B.ctx.resume();
+        B.next = B.ctx.currentTime + 0.1;
+        clearInterval(B.timer); B.timer = setInterval(tick, 250); tick();
+        B.master.gain.cancelScheduledValues(B.ctx.currentTime);
+        B.master.gain.setTargetAtTime(0.9, B.ctx.currentTime, 0.8);
+        B.on = true;
+      } else {
+        B.master.gain.setTargetAtTime(0, B.ctx.currentTime, 0.4);
+        clearInterval(B.timer); B.on = false;
+        setTimeout(() => { if (!B.on) B.ctx.suspend(); }, 1600);
+      }
+    } catch (x) { toast('이 브라우저에서는 배경음을 재생할 수 없어요'); return; }
+    $('bgm').classList.toggle('on', B.on); $('bgm').setAttribute('aria-pressed', String(B.on));
+    $('bgmLabel').textContent = B.on ? '배경음 끄기' : '배경음';
+  }
+  $('bgm').onclick = bgmToggle;
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && B.on) bgmToggle();
+    if (!document.hidden && S.ok) load(true);
+  });
+
+  /* ---------- Start ---------- */
+  render();
+  if (!CONFIGURED) { S.ready = true; render(); notice('관리자 안내: index.html 맨 아래 SUPABASE_URL과 SUPABASE_KEY를 채워 주세요.'); }
+  else { load(false); setInterval(() => { if (!document.hidden) load(true); }, 30000); }
+})();
+</script>
+</body>
+</html>
