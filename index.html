@@ -3,43 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>주한·유진에게</title>
-<meta name="description" content="송주한님, 이유진님께 보내는 마음을 모아요.">
-<meta property="og:title" content="주한님, 유진님께 마음을 남겨 주세요">
+<title>주한·유진·수연에게</title>
+<meta name="description" content="송주한님, 이유진님, 김수연님께 보내는 마음을 모아요.">
+<meta property="og:title" content="주한님, 유진님, 수연님께 마음을 남겨 주세요">
 <meta property="og:description" content="롤링페이퍼 · 글, 사진, 영상 무엇이든 좋아요 · 11월 30일 마감">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#EBF0E8">
+<meta name="theme-color" content="#FCEFE2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&family=Nanum+Pen+Script&display=swap">
 <style>
 /* Layout: 엽서 같은 히어로(소인 도장) → 받는 사람 탭 → 영상 / 사진 / 글 세 칸의 메시지 벽. 휴대폰 우선, 하단 고정 버튼 */
 :root{
-  --paper:#EBF0E8; --surface:#FAFBF7; --ink:#24302A; --ink-soft:#56665C; --line:#CFD9CC;
-  --accent:#D2652B; --accent-soft:#F6DCCB; --on-accent:#FFFFFF;
-  --juhan:#2B6B66; --yujin:#A3435F; --both:#6B5A8E;
-  --n-sage:#E2ECDA; --n-peach:#FBE2D2; --n-sky:#DCE9F2; --n-lilac:#EBE2F1; --n-butter:#F6ECC6;
-  --shadow:0 1px 2px rgba(36,48,42,.08),0 6px 18px -8px rgba(36,48,42,.18);
+  /* 따스한 가을 파스텔: 살구빛 바탕, 밤색 글씨, 감빛 포인트 (기기 다크모드와 상관없이 항상 이 톤) */
+  --paper:#FCEFE2; --surface:#FFF9F2; --ink:#4D3527; --ink-soft:#8C6E5B; --line:#EFD8C3;
+  --accent:#E07E4F; --accent-soft:#FDDCC6; --on-accent:#FFFFFF;
+  --juhan:#4F8F7F; --yujin:#C8667D; --suyeon:#5A86B0; --both:#8C77B8;
+  --n-sage:#E9EFD6; --n-peach:#FFE0CC; --n-sky:#E0EBEF; --n-lilac:#F1E2EC; --n-butter:#FFF0C4;
+  --shadow:0 1px 2px rgba(110,70,40,.08),0 8px 20px -10px rgba(150,90,50,.28);
   --f-display:"Jua","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --f-body:"Gaegu","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --f-hand:"Nanum Pen Script","Gaegu",cursive;
   color-scheme:light;
 }
-@media (prefers-color-scheme: dark){
-  :root{
-    color-scheme:dark;
-    --paper:#151B17; --surface:#1D2520; --ink:#E6ECE4; --ink-soft:#A1AFA5; --line:#2F3B33;
-    --accent:#EE8A50; --accent-soft:#3D2A1F; --on-accent:#1A120C;
-    --juhan:#74BDB5; --yujin:#E792AE; --both:#B2A2D8;
-    --n-sage:#243128; --n-peach:#37281F; --n-sky:#1E2B35; --n-lilac:#2C2535; --n-butter:#33301E;
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px -10px rgba(0,0,0,.6);
-  }
-}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
 body{
-  margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:18px;line-height:1.6;
+  margin:0;color:var(--ink);background-color:var(--paper);
+  background-image:radial-gradient(60rem 40rem at 100% -10%,rgba(255,205,160,.55),transparent 60%),radial-gradient(50rem 36rem at -10% 30%,rgba(250,215,190,.45),transparent 60%);
+  background-attachment:fixed;font-family:var(--f-body);font-size:18px;line-height:1.6;
   padding:env(safe-area-inset-top,0px) max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));
   word-break:keep-all;overflow-wrap:anywhere;-webkit-tap-highlight-color:transparent;
 }
@@ -53,7 +46,7 @@ button{cursor:pointer}
 .hero{position:relative;padding-block:48px 28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
 .eyebrow{font-size:13px;letter-spacing:.08em;color:var(--ink-soft);margin:0 0 14px}
 .hero h1{font-family:var(--f-display);font-weight:400;font-size:clamp(32px,6vw,60px);line-height:1.3;margin:0;text-wrap:balance}
-.nm-j{color:var(--juhan)} .nm-y{color:var(--yujin)}
+.nm-j{color:var(--juhan)} .nm-y{color:var(--yujin)} .nm-s{color:var(--suyeon)}
 .lede{max-width:34em;margin:18px 0 0;color:var(--ink-soft);font-size:19px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px}
 .btn{border:0;border-radius:999px;padding:11px 22px;font-size:17px;font-family:var(--f-display);display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s ease}
@@ -98,7 +91,7 @@ main{padding-block:8px 40px;display:grid;gap:40px}
 .card[data-c="lilac"]{background:var(--n-lilac)} .card[data-c="butter"]{background:var(--n-butter)}
 .to{font-size:15px;font-family:var(--f-display);display:inline-flex;align-items:center;gap:6px}
 .to::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
-.to.juhan{color:var(--juhan)} .to.yujin{color:var(--yujin)} .to.both{color:var(--both)}
+.to.juhan{color:var(--juhan)} .to.yujin{color:var(--yujin)} .to.suyeon{color:var(--suyeon)} .to.both{color:var(--both)}
 .msg{white-space:pre-wrap;margin:0;font-size:19px;line-height:1.55}
 .media{display:grid;gap:6px;grid-template-columns:repeat(2,1fr);border-radius:10px;overflow:hidden}
 .media.one{grid-template-columns:1fr}
@@ -128,7 +121,7 @@ main{padding-block:8px 40px;display:grid;gap:40px}
 footer{color:var(--ink-soft);font-size:13px;text-align:center;padding-block:0 110px}
 
 /* Sheets */
-.overlay{position:fixed;inset:0;z-index:30;background:rgba(18,24,20,.55);display:flex;align-items:center;justify-content:center;
+.overlay{position:fixed;inset:0;z-index:30;background:rgba(77,53,39,.45);display:flex;align-items:center;justify-content:center;
   padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .sheet{background:var(--surface);color:var(--ink);border-radius:18px;width:min(560px,100%);max-height:100%;overflow:auto;-webkit-overflow-scrolling:touch;padding:24px;box-shadow:0 24px 60px -20px rgba(0,0,0,.5)}
 .sheet h3{font-family:var(--f-display);font-size:24px;font-weight:400;margin:0 0 4px}
@@ -163,7 +156,7 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
   .hero{grid-template-columns:1fr;padding-top:30px}
   .stamp{width:96px;position:absolute;right:0;top:18px}
   .stamp .s2{font-size:18px}.stamp .s1,.stamp .s3{font-size:9px}
-  .hero h1{padding-right:88px;font-size:32px}
+  .hero h1{padding-right:88px;font-size:30px}
   .hero-actions .btn-primary{display:none}
   .sec-head .sub{margin-left:0;flex-basis:100%}
   .row2{grid-template-columns:1fr}
@@ -180,8 +173,8 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
 <div class="wrap">
   <header class="hero">
     <div>
-      <h1><span class="nm-j">주한님</span>, <span class="nm-y">유진님</span><br>함께여서 따뜻했어요</h1>
-      <p class="lede">함께 보낸 시간을 담아 두 분께 전하려고 해요. 하고 싶은 말이나 사진, 영상 중 편한 걸로 남겨 주세요. 11월 30일까지 모아서 두 분께 각자의 기념 앨범으로 전해 드릴게요.</p>
+      <h1><span class="nm-j">주한님</span>, <span class="nm-y">유진님</span>, <span class="nm-s">수연님</span><br>함께여서 따뜻했어요</h1>
+      <p class="lede">함께 보낸 시간을 담아 세 분께 전하려고 해요. 하고 싶은 말이나 사진, 영상 중 편한 걸로 남겨 주세요. 11월 30일까지 모아서 세 분께 각자의 기념 앨범으로 전해 드릴게요.</p>
       <div class="hero-actions">
         <button class="btn btn-primary" id="openCompose" type="button">마음 남기기</button>
         <span class="dday" id="dday"></span>
@@ -231,7 +224,8 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
       <div class="chips" id="toChips">
         <button type="button" class="chip" data-to="juhan" aria-pressed="false">송주한님께</button>
         <button type="button" class="chip" data-to="yujin" aria-pressed="false">이유진님께</button>
-        <button type="button" class="chip" data-to="both" aria-pressed="true">두 분 모두에게</button>
+        <button type="button" class="chip" data-to="suyeon" aria-pressed="false">김수연님께</button>
+        <button type="button" class="chip" data-to="both" aria-pressed="true">세 분 모두에게</button>
       </div>
     </div>
 
@@ -310,7 +304,7 @@ const SUPABASE_KEY = 'sb_publishable_j0-ASerOZhVVRpIXvxW3mg_vcDL8_Ci';
 
 (() => {
   const DEADLINE = new Date(2026, 10, 30);
-  const RECIP = { juhan: '송주한님', yujin: '이유진님', both: '주한님·유진님' };
+  const RECIP = { juhan: '송주한님', yujin: '이유진님', suyeon: '김수연님', both: '세 분 모두' };
   const S = { posts: [], filter: 'all', ready: false, ok: false, pwCache: {} };
   const $ = id => document.getElementById(id);
   const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
@@ -366,7 +360,7 @@ const SUPABASE_KEY = 'sb_publishable_j0-ASerOZhVVRpIXvxW3mg_vcDL8_Ci';
   function notice(msg) { const n = $('notice'); n.textContent = msg || ''; n.hidden = !msg; }
 
   /* ---------- Render ---------- */
-  const TABS = [['all', '전체'], ['juhan', '주한님께'], ['yujin', '유진님께'], ['both', '두 분께']];
+  const TABS = [['all', '전체'], ['juhan', '주한님께'], ['yujin', '유진님께'], ['suyeon', '수연님께'], ['both', '모두에게']];
   function renderTabs() {
     const box = $('tabs'); box.textContent = '';
     for (const [k, label] of TABS) {
