@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>주한·유진에게</title>
-<meta name="description" content="CTO부문 HR담당 EXG팀이 송주한님, 이유진님께 보내는 마음을 모아요.">
+<meta name="description" content="송주한님, 이유진님께 보내는 마음을 모아요.">
 <meta property="og:title" content="주한님, 유진님께 마음을 남겨 주세요">
-<meta property="og:description" content="EXG팀 롤링페이퍼 · 글, 사진, 영상 무엇이든 좋아요 · 11월 30일 마감">
+<meta property="og:description" content="롤링페이퍼 · 글, 사진, 영상 무엇이든 좋아요 · 11월 30일 마감">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#EBF0E8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Pen+Script&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&family=Nanum+Pen+Script&display=swap">
 <style>
 /* Layout: 엽서 같은 히어로(소인 도장) → 받는 사람 탭 → 영상 / 사진 / 글 세 칸의 메시지 벽. 휴대폰 우선, 하단 고정 버튼 */
 :root{
@@ -20,9 +20,9 @@
   --juhan:#2B6B66; --yujin:#A3435F; --both:#6B5A8E;
   --n-sage:#E2ECDA; --n-peach:#FBE2D2; --n-sky:#DCE9F2; --n-lilac:#EBE2F1; --n-butter:#F6ECC6;
   --shadow:0 1px 2px rgba(36,48,42,.08),0 6px 18px -8px rgba(36,48,42,.18);
-  --f-display:"Gowun Batang","Noto Serif KR","Apple SD Gothic Neo",serif;
-  --f-body:"Gowun Dodum","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-  --f-hand:"Nanum Pen Script","Gowun Dodum",cursive;
+  --f-display:"Jua","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-body:"Gaegu","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-hand:"Nanum Pen Script","Gaegu",cursive;
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){
@@ -39,7 +39,7 @@
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
 body{
-  margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.7;
+  margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:18px;line-height:1.6;
   padding:env(safe-area-inset-top,0px) max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));
   word-break:keep-all;overflow-wrap:anywhere;-webkit-tap-highlight-color:transparent;
 }
@@ -52,11 +52,11 @@ button{cursor:pointer}
 /* Hero */
 .hero{position:relative;padding-block:48px 28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
 .eyebrow{font-size:13px;letter-spacing:.08em;color:var(--ink-soft);margin:0 0 14px}
-.hero h1{font-family:var(--f-display);font-weight:700;font-size:clamp(30px,6vw,58px);line-height:1.28;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.hero h1{font-family:var(--f-display);font-weight:400;font-size:clamp(32px,6vw,60px);line-height:1.3;margin:0;text-wrap:balance}
 .nm-j{color:var(--juhan)} .nm-y{color:var(--yujin)}
-.lede{max-width:34em;margin:18px 0 0;color:var(--ink-soft);font-size:16px}
+.lede{max-width:34em;margin:18px 0 0;color:var(--ink-soft);font-size:19px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:26px}
-.btn{border:0;border-radius:999px;padding:12px 22px;font-size:15.5px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s ease}
+.btn{border:0;border-radius:999px;padding:11px 22px;font-size:17px;font-family:var(--f-display);display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s ease}
 .btn-primary{background:var(--accent);color:var(--on-accent);font-weight:600}
 .btn-primary:active{transform:scale(.98)}
 .btn-primary:disabled{opacity:.5;cursor:not-allowed}
@@ -68,7 +68,7 @@ button{cursor:pointer}
 .stamp::before{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px solid var(--accent);opacity:.6}
 .stamp span{display:block;font-family:var(--f-display);line-height:1.25}
 .stamp .s1{font-size:12px;letter-spacing:.2em}
-.stamp .s2{font-size:26px;font-weight:700;margin:2px 0}
+.stamp .s2{font-size:27px;margin:2px 0}
 .stamp .s3{font-size:11px;letter-spacing:.06em;font-variant-numeric:tabular-nums}
 .notice{background:var(--accent-soft);border-radius:12px;padding:12px 16px;font-size:14px;margin:0 0 12px}
 
@@ -77,7 +77,7 @@ button{cursor:pointer}
 .toolbar::-webkit-scrollbar{display:none}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
 .tabs{display:flex;gap:6px;width:max-content}
-.tab{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-size:14px;display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
+.tab{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:15px;font-family:var(--f-display);display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
 .tab .c{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:12.5px}
 .tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .tab[aria-selected="true"] .c{color:inherit;opacity:.75}
@@ -85,9 +85,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* Sections */
 main{padding-block:8px 40px;display:grid;gap:40px}
 .sec-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;margin:20px 0 16px;border-bottom:1px solid var(--line);padding-bottom:8px}
-.sec-head h2{font-family:var(--f-display);font-size:24px;margin:0;font-weight:700}
-.sec-head .cnt{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:14px}
-.sec-head .sub{margin-left:auto;font-size:13px;color:var(--ink-soft)}
+.sec-head h2{font-family:var(--f-display);font-size:26px;margin:0;font-weight:400}
+.sec-head .cnt{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:16px}
+.sec-head .sub{margin-left:auto;font-size:16px;color:var(--ink-soft)}
 .grid{columns:3 280px;column-gap:16px}
 .grid.videos{columns:2 340px}
 .empty{border:1.5px dashed var(--line);border-radius:14px;padding:24px 18px;color:var(--ink-soft);text-align:center;font-size:14.5px}
@@ -96,10 +96,10 @@ main{padding-block:8px 40px;display:grid;gap:40px}
 .card{break-inside:avoid;margin:0 0 16px;border-radius:14px;padding:16px 18px 14px;box-shadow:var(--shadow);background:var(--n-sage);display:flex;flex-direction:column;gap:10px}
 .card[data-c="peach"]{background:var(--n-peach)} .card[data-c="sky"]{background:var(--n-sky)}
 .card[data-c="lilac"]{background:var(--n-lilac)} .card[data-c="butter"]{background:var(--n-butter)}
-.to{font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.to{font-size:15px;font-family:var(--f-display);display:inline-flex;align-items:center;gap:6px}
 .to::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
 .to.juhan{color:var(--juhan)} .to.yujin{color:var(--yujin)} .to.both{color:var(--both)}
-.msg{white-space:pre-wrap;margin:0;font-size:15.5px}
+.msg{white-space:pre-wrap;margin:0;font-size:19px;line-height:1.55}
 .media{display:grid;gap:6px;grid-template-columns:repeat(2,1fr);border-radius:10px;overflow:hidden}
 .media.one{grid-template-columns:1fr}
 .media img{width:100%;max-width:100%;object-fit:cover;aspect-ratio:1;display:block;cursor:zoom-in;background:var(--line)}
@@ -131,16 +131,16 @@ footer{color:var(--ink-soft);font-size:13px;text-align:center;padding-block:0 11
 .overlay{position:fixed;inset:0;z-index:30;background:rgba(18,24,20,.55);display:flex;align-items:center;justify-content:center;
   padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .sheet{background:var(--surface);color:var(--ink);border-radius:18px;width:min(560px,100%);max-height:100%;overflow:auto;-webkit-overflow-scrolling:touch;padding:24px;box-shadow:0 24px 60px -20px rgba(0,0,0,.5)}
-.sheet h3{font-family:var(--f-display);font-size:22px;margin:0 0 4px}
-.hint{color:var(--ink-soft);font-size:13.5px;margin:0 0 18px}
+.sheet h3{font-family:var(--f-display);font-size:24px;font-weight:400;margin:0 0 4px}
+.hint{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
 .field{display:grid;gap:6px;margin-bottom:16px}
-.field > label,.field > .lab{font-size:14px;font-weight:600}
-.field small{color:var(--ink-soft);font-size:12.5px;font-weight:400}
-.inp{width:100%;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:11px 12px;font-size:16px}
+.field > label,.field > .lab{font-size:16px;font-family:var(--f-display)}
+.field small{color:var(--ink-soft);font-size:14.5px;font-family:var(--f-body)}
+.inp{width:100%;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:10px 12px;font-size:18px}
 textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1.5px solid var(--line);background:transparent;border-radius:999px;padding:8px 14px;font-size:14.5px}
-.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);font-weight:600}
+.chip{border:1.5px solid var(--line);background:transparent;border-radius:999px;padding:7px 14px;font-size:15.5px;font-family:var(--f-display)}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
 .swatches{display:flex;gap:12px}
 .sw{width:34px;height:34px;border-radius:50%;border:2px solid var(--line);padding:0}
 .sw[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 3px var(--surface) inset}
@@ -151,6 +151,7 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
 .pv img,.pv video{width:100%;height:100%;object-fit:cover}
 .pv .tag{position:absolute;left:4px;bottom:4px;font-size:10.5px;background:rgba(0,0,0,.6);color:#fff;border-radius:4px;padding:0 4px}
 .pv button{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;border:0;background:rgba(0,0,0,.65);color:#fff;font-size:14px;line-height:1}
+.mix-hint{color:var(--ink-soft);font-size:15px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .err{color:var(--yujin);font-size:13.5px;min-height:1.2em;margin:0 0 8px}
 .sheet-actions{display:flex;justify-content:flex-end;gap:10px}
@@ -162,7 +163,7 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
   .hero{grid-template-columns:1fr;padding-top:30px}
   .stamp{width:96px;position:absolute;right:0;top:18px}
   .stamp .s2{font-size:18px}.stamp .s1,.stamp .s3{font-size:9px}
-  .hero h1{padding-right:88px;font-size:30px}
+  .hero h1{padding-right:88px;font-size:32px}
   .hero-actions .btn-primary{display:none}
   .sec-head .sub{margin-left:0;flex-basis:100%}
   .row2{grid-template-columns:1fr}
@@ -179,16 +180,15 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
 <div class="wrap">
   <header class="hero">
     <div>
-      <p class="eyebrow">CTO부문 HR담당 EXG팀이 보내는 마음</p>
       <h1><span class="nm-j">주한님</span>, <span class="nm-y">유진님</span><br>함께여서 따뜻했어요</h1>
-      <p class="lede">사람을 키우고 조직의 온도를 함께 만들어 온 두 분께, 같이 보낸 시간을 담아 전하려고 해요. 하고 싶은 말이나 사진, 영상 중 편한 걸로 남겨 주세요. 11월 30일까지 모아서 두 분께 각자의 기념 앨범으로 전해 드릴게요.</p>
+      <p class="lede">함께 보낸 시간을 담아 두 분께 전하려고 해요. 하고 싶은 말이나 사진, 영상 중 편한 걸로 남겨 주세요. 11월 30일까지 모아서 두 분께 각자의 기념 앨범으로 전해 드릴게요.</p>
       <div class="hero-actions">
         <button class="btn btn-primary" id="openCompose" type="button">마음 남기기</button>
         <span class="dday" id="dday"></span>
       </div>
     </div>
     <div class="stamp" aria-hidden="true">
-      <div><span class="s1">EXG TEAM</span><span class="s2">고마워요</span><span class="s3">2026 · 11 · 30</span></div>
+      <div><span class="s1">WITH LOVE</span><span class="s2">고마워요</span><span class="s3">2026 · 11 · 30</span></div>
     </div>
   </header>
 
@@ -212,7 +212,7 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
       <div id="g-text"></div>
     </section>
   </main>
-  <footer>CTO부문 HR담당 EXG팀 · 인재육성과 조직문화를 함께 만들어 온 시간들</footer>
+  <footer>함께한 모든 날들, 고마웠어요</footer>
 </div>
 
 <div class="bar">
@@ -241,7 +241,7 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
     </div>
 
     <div class="field" id="mediaField">
-      <span class="lab">사진 · 영상 <small>(선택 · 사진 6장, 영상 1개 50MB까지)</small></span>
+      <span class="lab">사진 또는 영상 <small>(선택 · 사진 최대 6장, 또는 영상 1개 50MB까지)</small></span>
       <div class="attach">
         <button type="button" class="btn btn-ghost" id="addPhoto">사진 추가</button>
         <button type="button" class="btn btn-ghost" id="addVideo">영상 추가</button>
@@ -249,6 +249,7 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
         <input type="file" id="fVideo" accept="video/*" hidden>
       </div>
       <div class="previews" id="previews"></div>
+      <small class="mix-hint" id="mixHint" hidden></small>
     </div>
 
     <div class="field">
@@ -268,8 +269,8 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
         <input class="inp" id="fName" maxlength="30" placeholder="익명" autocomplete="off">
       </div>
       <div class="field" id="pwField">
-        <label for="fPw">비밀번호 <small>(수정·삭제할 때 필요해요)</small></label>
-        <input class="inp" id="fPw" type="password" maxlength="40" placeholder="4자 이상" autocomplete="new-password">
+        <label for="fPw">비밀번호 <small>(숫자 4자리 · 수정·삭제할 때 필요해요)</small></label>
+        <input class="inp pin" id="fPw" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="숫자 4자리" autocomplete="off">
       </div>
     </div>
 
@@ -287,8 +288,8 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.65}
     <h3 id="pwTitle">비밀번호 확인</h3>
     <p class="hint" id="pwHint">글을 남길 때 정한 비밀번호를 입력해 주세요.</p>
     <div class="field">
-      <label for="pwInput">비밀번호</label>
-      <input class="inp" id="pwInput" type="password" autocomplete="off">
+      <label for="pwInput">비밀번호 <small>(숫자 4자리)</small></label>
+      <input class="inp pin" id="pwInput" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="숫자 4자리" autocomplete="off">
     </div>
     <p class="err" id="pwErr" role="alert"></p>
     <div class="sheet-actions">
@@ -467,11 +468,20 @@ const SUPABASE_KEY = 'sb_publishable_j0-ASerOZhVVRpIXvxW3mg_vcDL8_Ci';
       x.onclick = () => { URL.revokeObjectURL(f.url); C.files.splice(i, 1); renderPreviews(); };
       d.append(x); box.append(d);
     });
+    const hasVideo = C.files.some(f => f.kind === 'video');
+    const hasPhoto = C.files.some(f => f.kind === 'image');
+    $('addPhoto').disabled = hasVideo;
+    $('addVideo').disabled = hasPhoto;
+    const hint = $('mixHint');
+    hint.textContent = hasVideo ? '영상을 넣으면 사진은 함께 올릴 수 없어요. 사진을 올리려면 영상을 빼 주세요.'
+      : hasPhoto ? '사진을 넣으면 영상은 함께 올릴 수 없어요. 영상을 올리려면 사진을 모두 빼 주세요.' : '';
+    hint.hidden = !hint.textContent;
   }
   $('addPhoto').onclick = () => $('fPhoto').click();
   $('addVideo').onclick = () => $('fVideo').click();
   $('fPhoto').onchange = e => {
     const err = $('composeErr'); err.textContent = '';
+    if (C.files.some(f => f.kind === 'video')) { e.target.value = ''; err.textContent = '사진과 영상은 함께 올릴 수 없어요.'; return; }
     for (const file of e.target.files) {
       if (C.files.filter(f => f.kind === 'image').length >= MAX_PHOTO) { err.textContent = '사진은 한 번에 ' + MAX_PHOTO + '장까지 올릴 수 있어요.'; break; }
       C.files.push({ kind: 'image', file, url: URL.createObjectURL(file) });
@@ -482,6 +492,7 @@ const SUPABASE_KEY = 'sb_publishable_j0-ASerOZhVVRpIXvxW3mg_vcDL8_Ci';
     const err = $('composeErr'); err.textContent = '';
     const file = e.target.files[0]; e.target.value = '';
     if (!file) return;
+    if (C.files.some(f => f.kind === 'image')) { err.textContent = '사진과 영상은 함께 올릴 수 없어요.'; return; }
     const type = videoType(file);
     if (!type) { err.textContent = 'MP4, MOV, WebM 영상만 올릴 수 있어요.'; return; }
     if (file.size > MAX_VIDEO) { err.textContent = '영상은 50MB까지 올릴 수 있어요. 30초 안팎으로 잘라서 올려 주세요. (지금 ' + Math.round(file.size / 1048576) + 'MB)'; return; }
@@ -524,7 +535,7 @@ const SUPABASE_KEY = 'sb_publishable_j0-ASerOZhVVRpIXvxW3mg_vcDL8_Ci';
     $('pwField').hidden = !!edit;
     $('mediaField').hidden = !!edit;
     $('composeTitle').textContent = edit ? '글 고치기' : '마음 남기기';
-    $('composeHint').textContent = edit ? '받는 사람, 글, 이름, 카드 색을 고칠 수 있어요. 사진·영상을 바꾸려면 삭제한 뒤 다시 올려 주세요.' : '글, 사진, 영상 중 하나만 있어도 괜찮아요.';
+    $('composeHint').textContent = edit ? '받는 사람, 글, 이름, 카드 색을 고칠 수 있어요. 사진·영상을 바꾸려면 삭제한 뒤 다시 올려 주세요.' : '글만, 사진만, 영상만 올려도 되고, 글에 사진이나 영상을 곁들여도 좋아요.';
     $('submitBtn').textContent = edit ? '저장' : '남기기';
     $('composeErr').textContent = '';
     $('composeOv').hidden = false;
@@ -534,7 +545,7 @@ const SUPABASE_KEY = 'sb_publishable_j0-ASerOZhVVRpIXvxW3mg_vcDL8_Ci';
 
   function friendly(e) {
     const m = (e && e.message) || '';
-    if (/pw_short/.test(m)) return '비밀번호를 4자 이상 정해 주세요.';
+    if (/pw_short/.test(m)) return '비밀번호를 숫자 4자리로 정해 주세요.';
     if (/empty/.test(m)) return '글이나 사진, 영상 중 하나는 남겨 주세요.';
     if (/too_many/.test(m)) return '사진·영상이 너무 많아요. 7개 이하로 줄여 주세요.';
     if (/img/.test(m)) return '사진을 읽지 못했어요. 다른 사진으로 다시 골라 주세요.';
@@ -565,7 +576,8 @@ const SUPABASE_KEY = 'sb_publishable_j0-ASerOZhVVRpIXvxW3mg_vcDL8_Ci';
 
     const pw = $('fPw').value;
     if (!message && !C.files.length) { err.textContent = '글이나 사진, 영상 중 하나는 남겨 주세요.'; return; }
-    if (pw.length < 4) { err.textContent = '비밀번호를 4자 이상 정해 주세요. 나중에 고치거나 지울 때 필요해요.'; return; }
+    if (C.files.some(f => f.kind === 'video') && C.files.some(f => f.kind === 'image')) { err.textContent = '사진과 영상은 함께 올릴 수 없어요. 둘 중 하나만 남겨 주세요.'; return; }
+    if (!/^\d{4}$/.test(pw)) { err.textContent = '비밀번호를 숫자 4자리로 정해 주세요. 나중에 고치거나 지울 때 필요해요.'; return; }
 
     btn.disabled = true;
     try {
@@ -625,6 +637,11 @@ const SUPABASE_KEY = 'sb_publishable_j0-ASerOZhVVRpIXvxW3mg_vcDL8_Ci';
     } catch (x) { $('pwErr').textContent = '확인하지 못했어요. 인터넷 연결을 확인해 주세요.'; }
     finally { btn.disabled = false; }
   };
+
+  document.querySelectorAll('.pin').forEach(i => i.addEventListener('input', () => {
+    const v = i.value.replace(/\D/g, '').slice(0, 4);
+    if (v !== i.value) i.value = v;
+  }));
 
   /* ---------- Overlays ---------- */
   document.querySelectorAll('[data-close]').forEach(b => b.onclick = () => { b.closest('.overlay').hidden = true; });
