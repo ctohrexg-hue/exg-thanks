@@ -362,29 +362,23 @@ const SUPABASE_URL = 'https://isudtnzbiuyqspshofyk.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_j0-ASerOZhVVRpIXvxW3mg_vcDL8_Ci';
 /* ========================================= */
 
-/* ====== 이 파일이 누구의 페이지인지: 'juhan' 또는 'ys' (유진님·수연님) ====== */
+/* ====== 이 파일이 누구의 페이지인지: 'juhan' / 'yujin' / 'suyeon' ====== */
 const PAGE = 'juhan';
 /* ========================================================================== */
 
 (() => {
-  const DEADLINE = new Date(2026, 10, 25);
+  const one = (key, nm, y, m, d) => ({
+    names: [[key, nm]], recip: { [key]: nm }, chips: null, tabs: null, def: key,
+    deadline: new Date(y, m - 1, d), dlabel: m + '월 ' + d + '일',
+    lede: '함께 보낸 시간을 담아 ' + nm + '께 전하려고 해요. 하고 싶은 말이나 사진, 영상 중 편한 걸로 남겨 주세요. ' + m + '월 ' + d + '일까지 모아서 기념 앨범으로 전해 드릴게요.'
+  });
   const PAGES = {
-    juhan: {
-      names: [['juhan', '주한님']],
-      recip: { juhan: '주한님' },
-      chips: null, tabs: null, def: 'juhan',
-      lede: '함께 보낸 시간을 담아 주한님께 전하려고 해요. 하고 싶은 말이나 사진, 영상 중 편한 걸로 남겨 주세요. 11월 25일까지 모아서 기념 앨범으로 전해 드릴게요.'
-    },
-    ys: {
-      names: [['yujin', '유진님'], ['suyeon', '수연님']],
-      recip: { yujin: '유진님', suyeon: '수연님', ys: '유진님·수연님' },
-      chips: [['yujin', '이유진님께'], ['suyeon', '김수연님께'], ['ys', '두 분 모두에게']],
-      tabs: [['all', '전체'], ['yujin', '유진님께'], ['suyeon', '수연님께'], ['ys', '두 분께']],
-      def: 'ys',
-      lede: '함께 보낸 시간을 담아 두 분께 전하려고 해요. 하고 싶은 말이나 사진, 영상 중 편한 걸로 남겨 주세요. 11월 25일까지 모아서 두 분께 각자의 기념 앨범으로 전해 드릴게요.'
-    }
+    juhan:  one('juhan', '주한님', 2026, 11, 25),
+    yujin:  one('yujin', '유진님', 2026, 11, 25),
+    suyeon: one('suyeon', '수연님', 2026, 12, 6)
   };
   const P = PAGES[PAGE] || PAGES.juhan;
+  const DEADLINE = P.deadline;
   const RECIP = P.recip;
   const KEYS = Object.keys(RECIP);
   const S = { posts: [], filter: 'all', ready: false, ok: false, social: true, level: 2, cards: new Map(), expanded: new Set() };
@@ -468,7 +462,7 @@ const PAGE = 'juhan';
     const t = new Date(); t.setHours(0, 0, 0, 0);
     const n = Math.round((DEADLINE - t) / 86400000);
     const box = $('dday');
-    if (n > 0) { box.append('11월 25일 마감 · '); box.append(el('b', null, 'D-' + n)); }
+    if (n > 0) { box.append(P.dlabel + ' 마감 · '); box.append(el('b', null, 'D-' + n)); }
     else if (n === 0) box.append(el('b', null, '오늘 마감이에요'));
     else box.textContent = '모으기가 끝났어요. 남겨 주신 마음 고맙습니다.';
   })();
