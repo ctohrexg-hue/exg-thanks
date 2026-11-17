@@ -170,6 +170,10 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.6}
 .pv .tag{position:absolute;left:4px;bottom:4px;font-size:10.5px;background:rgba(0,0,0,.6);color:#fff;border-radius:4px;padding:0 4px}
 .pv button{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;border:0;background:rgba(0,0,0,.65);color:#fff;font-size:14px;line-height:1}
 .mix-hint{color:var(--ink-soft);font-size:15px}
+.vid-note{margin:8px 0 0;padding:9px 12px;border-radius:12px;background:#FFF1DF;border:1px dashed #E9C39E;color:var(--ink-soft);font-size:15px;line-height:1.5}
+.vid-note b{color:var(--ink)}
+.vid-note.warn{background:#FDE7E4;border:1.5px solid #E79A8E;color:#9A3F33}
+.vid-note.warn b{color:#9A3F33}
 /* 이모지 반응 */
 .reacts{display:flex;flex-wrap:wrap;gap:6px;padding:6px 14px 0}
 .rc{border:1px solid var(--line);background:transparent;border-radius:999px;padding:2px 10px;font-size:15px;line-height:1.6;display:inline-flex;gap:4px;align-items:center}
@@ -265,7 +269,7 @@ textarea.inp::placeholder{color:#B39884}
     </div>
 
     <div class="field" id="mediaField">
-      <span class="lab">사진 · 영상 · 목소리 <small>(선택 · 셋 중 하나만 · 사진 최대 6장, 영상 1개 50MB, 목소리 3분까지)</small></span>
+      <span class="lab">사진 · 영상 · 목소리 <small>(선택 · 셋 중 하나만 · 사진 최대 6장, 영상 1개 30MB, 목소리 3분까지)</small></span>
       <div class="attach">
         <button type="button" class="btn btn-ghost" id="addPhoto">사진</button>
         <button type="button" class="btn btn-ghost" id="addVideo">영상</button>
@@ -274,6 +278,7 @@ textarea.inp::placeholder{color:#B39884}
         <input type="file" id="fVideo" accept="video/*" hidden>
         <input type="file" id="fVoice" accept="audio/*" hidden>
       </div>
+      <p class="vid-note" id="vidNote"></p>
       <div class="voicebox" id="voiceBox" hidden>
         <div class="rec-row" id="recRow">
           <button type="button" class="rec-btn" id="recBtn"><span class="dot"></span><span id="recLabel">녹음 시작</span></button>
@@ -767,7 +772,14 @@ const PAGE = 'ys';
 
   /* ---------- 글쓰기 ---------- */
   const C = { to: P.def, color: 'sage', files: [], editing: null, editPw: '', qi: 0 };
-  const MAX_PHOTO = 6, MAX_VIDEO = 50 * 1024 * 1024;
+  const MAX_PHOTO = 6, MAX_VIDEO_MB = 30, MAX_VIDEO = MAX_VIDEO_MB * 1024 * 1024;
+  const VID_TIP = '🎬 <b>영상은 ' + MAX_VIDEO_MB + 'MB까지</b> 올릴 수 있어요. 보통 <b>15~30초</b> 길이예요. 길면 앞뒤를 잘라서 올려 주세요.';
+  function vidNote(sizeMB) {
+    const n = $('vidNote');
+    n.classList.toggle('warn', sizeMB != null);
+    n.innerHTML = sizeMB == null ? VID_TIP
+      : '⚠️ 고른 영상이 <b>' + sizeMB + 'MB</b>라 올릴 수 없어요. <b>' + MAX_VIDEO_MB + 'MB 이하</b>로 줄여 주세요.<br>· 갤러리 편집에서 앞뒤를 잘라 주세요.<br>· 카톡 \'나와의 채팅\'에 보냈다가 저장한 영상은 용량이 작아져요.';
+  }
 
   /* 글감 질문: 입력 칸의 흐린 안내 문구로만 보여요 ({n} = 받는 사람) */
   const QNAME = { juhan: '주한님', yujin: '유진님', suyeon: '수연님', ys: '두 분' };
@@ -797,6 +809,7 @@ const PAGE = 'ys';
     $('addPhoto').disabled = kinds.size > 0 && !kinds.has('image');
     $('addVideo').disabled = kinds.size > 0 && !kinds.has('video');
     $('addVoice').disabled = kinds.size > 0 && !kinds.has('audio');
+    $('vidNote').hidden = kinds.size > 0 && !kinds.has('video');
     const hint = $('mixHint');
     hint.textContent = kinds.size ? '사진·영상·목소리는 한 가지만 올릴 수 있어요. 다른 걸 올리려면 지금 넣은 걸 × 로 빼 주세요.' : '';
     hint.hidden = !hint.textContent;
@@ -819,7 +832,8 @@ const PAGE = 'ys';
     if (C.files.some(f => f.kind !== 'video')) { err.textContent = '사진·영상·목소리는 한 가지만 올릴 수 있어요.'; return; }
     const type = videoType(file);
     if (!type) { err.textContent = 'MP4, MOV, WebM 영상만 올릴 수 있어요.'; return; }
-    if (file.size > MAX_VIDEO) { err.textContent = '영상은 50MB까지 올릴 수 있어요. 30초 안팎으로 잘라서 올려 주세요. (지금 ' + Math.round(file.size / 1048576) + 'MB)'; return; }
+    if (file.size > MAX_VIDEO) { vidNote(Math.ceil(file.size / 1048576)); $('vidNote').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); return; }
+    vidNote(null);
     C.files.filter(f => f.kind === 'video').forEach(f => URL.revokeObjectURL(f.url));
     C.files = C.files.filter(f => f.kind !== 'video');
     C.files.push({ kind: 'video', file, url: URL.createObjectURL(file), type }); renderPreviews();
@@ -937,6 +951,7 @@ const PAGE = 'ys';
     $('pwField').hidden = !!edit;
     $('mediaField').hidden = !!edit;
     $('composeTitle').textContent = edit ? '글 고치기' : '마음 남기기';
+    vidNote(null);
     $('composeHint').textContent = edit ? (P.chips ? '받는 사람, ' : '') + '글, 이름, 카드 색을 고칠 수 있어요. 사진·영상을 바꾸려면 삭제한 뒤 다시 올려 주세요.' : '글만, 사진만, 영상만 올려도 되고, 글에 사진이나 영상을 곁들여도 좋아요.';
     $('submitBtn').textContent = edit ? '저장' : '남기기';
     $('composeErr').textContent = '';
@@ -952,7 +967,7 @@ const PAGE = 'ys';
     if (/too_many/.test(m)) return '사진이 너무 많아요. 6장 이하로 줄여 주세요.';
     if (/img/.test(m)) return '사진을 읽지 못했어요. 다른 사진으로 다시 골라 주세요.';
     if (/network/.test(m)) return '인터넷 연결이 끊겼어요. 와이파이나 데이터를 확인하고 다시 눌러 주세요.';
-    if (/size|large|413/.test(m) || (e && e.status === 413)) return '파일이 너무 커요. 영상은 50MB 이하로 줄여 주세요.';
+    if (/size|large|413/.test(m) || (e && e.status === 413)) return '파일이 너무 커요. 영상은 ' + MAX_VIDEO_MB + 'MB 이하로 줄여 주세요.';
     if (/mime|type/i.test(m)) return '이 형식은 올릴 수 없어요. 사진은 JPG·PNG, 영상은 MP4·MOV, 목소리는 M4A·MP3로 올려 주세요.';
     if (/check constraint|to_whom/.test(m)) return '받는 사람을 저장하지 못했어요. 관리자에게 알려 주세요.';
     return '올리지 못했어요. 잠시 뒤 다시 눌러 주세요.';
