@@ -58,11 +58,6 @@ button{cursor:pointer}
 .profile h1{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,7vw,40px);line-height:1.3;margin:0;text-wrap:balance}
 .nm-juhan{color:var(--juhan)} .nm-yujin{color:var(--yujin)} .nm-suyeon{color:var(--suyeon)}
 .lede{margin:0;color:var(--ink-soft);font-size:18.5px}
-.stats{display:flex;gap:0;background:rgba(255,249,242,.7);border:1px solid var(--line);border-radius:14px;padding:10px 4px}
-.stats div{flex:1;display:grid;justify-items:center;line-height:1.2}
-.stats div + div{border-left:1px solid var(--line)}
-.stats b{font-family:var(--f-display);font-weight:400;font-size:22px;font-variant-numeric:tabular-nums}
-.stats span{font-size:15px;color:var(--ink-soft)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .btn{border:0;border-radius:999px;padding:11px 22px;font-size:17px;font-family:var(--f-display);display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s ease}
 .btn-primary{background:var(--accent);color:var(--on-accent)}
@@ -199,11 +194,6 @@ textarea.inp{min-height:140px;resize:vertical;line-height:1.6}
 .voicebox .small{font-size:14.5px;color:var(--ink-soft)}
 .linklike{background:none;border:0;padding:0;color:var(--accent);font-size:15.5px;text-align:left}
 .pv .pvmic{display:grid;place-items:center;width:100%;height:100%;font-size:30px;background:var(--accent-soft)}
-/* 많이 나온 말 */
-.words{background:rgba(255,249,242,.7);border:1px solid var(--line);border-radius:14px;padding:12px 14px 14px}
-.words h2{font-family:var(--f-display);font-weight:400;font-size:17px;margin:0 0 6px;color:var(--ink-soft)}
-.cloud{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;line-height:1.25}
-.cloud span{font-family:var(--f-display)}
 .q-more{justify-self:end;background:none;border:0;padding:2px 0;color:var(--accent);font-size:15px;font-family:var(--f-body)}
 textarea.inp::placeholder{color:#B39884}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -242,15 +232,6 @@ textarea.inp::placeholder{color:#B39884}
     <div class="rings" id="rings"></div>
     <h1 id="heroTitle"></h1>
     <p class="lede" id="lede"></p>
-    <div class="stats" aria-label="지금까지 모인 마음">
-      <div><b id="st-posts">0</b><span>마음</span></div>
-      <div><b id="st-likes">0</b><span>좋아요</span></div>
-      <div><b id="st-comments">0</b><span>댓글</span></div>
-    </div>
-    <section class="words" id="words" hidden aria-labelledby="wordsTitle">
-      <h2 id="wordsTitle">우리가 가장 많이 한 말</h2>
-      <div class="cloud" id="cloud"></div>
-    </section>
     <div class="hero-actions">
       <button class="btn btn-primary" id="openCompose" type="button">마음 남기기</button>
       <span class="dday" id="dday"></span>
@@ -735,44 +716,9 @@ const PAGE = 'juhan';
     reactBusy.delete(key); refresh(id);
   }
 
-  /* ---------- 많이 나온 말 (따뜻한 말 사전에서 세기) ---------- */
-  const WARM = [
-    [/고마|감사/, '고마워요'], [/웃음|웃어|웃던|웃는|웃었|웃게|미소/, '웃음'], [/든든/, '든든'], [/행복/, '행복'], [/응원/, '응원'],
-    [/최고/, '최고'], [/보고\s?싶/, '보고 싶어요'], [/사랑/, '사랑'], [/덕분/, '덕분에'], [/배웠|배움|배운|배울/, '배움'],
-    [/따뜻|따듯/, '따뜻함'], [/즐거|재밌|재미있/, '즐거움'], [/추억/, '추억'], [/그리울|그리워|그립/, '그리워요'], [/축하/, '축하'],
-    [/건강/, '건강'], [/멋[지져진있]/, '멋져요'], [/수고/, '수고했어요'], [/함께/, '함께'], [/배려/, '배려'], [/열정/, '열정'],
-    [/꽃길/, '꽃길'], [/기억/, '기억'], [/힘이 ?[났나되]|힘내|힘이 돼/, '힘'], [/친절|다정/, '다정함'], [/존경/, '존경'],
-    [/새로운 시작|새출발|새 출발/, '새로운 시작'], [/편안|편하/, '편안함'], [/센스/, '센스'], [/꼼꼼/, '꼼꼼함']
-  ].map(([re, label]) => [new RegExp(re.source, 'g'), label]);
-  function renderWords() {
-    const counts = new Map();
-    const add = t => { if (!t) return; for (const [re, label] of WARM) { const m = t.match(re); if (m) counts.set(label, (counts.get(label) || 0) + m.length); } };
-    S.posts.forEach(p => { add(p.message); (Array.isArray(p.comments) ? p.comments : []).forEach(c => add(c.body)); });
-    const top = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12);
-    const box = $('words');
-    if (top.length < 3) { box.hidden = true; return; }
-    box.hidden = false;
-    const max = top[0][1], min = top[top.length - 1][1];
-    const tints = ['var(--accent)', 'var(--yujin)', 'var(--juhan)', 'var(--suyeon)', 'var(--both)', '#B9824F'];
-    const order = top.map((w, i) => ({ w, i, k: (i * 5) % top.length })).sort((a, b) => a.k - b.k);
-    $('cloud').replaceChildren(...order.map(({ w: [label, n], i }) => {
-      const s = el('span', null, label);
-      s.style.fontSize = Math.round(16 + (max === min ? 1 : (n - min) / (max - min)) * 18) + 'px';
-      s.style.color = tints[i % tints.length];
-      s.title = n + '번 나왔어요';
-      return s;
-    }));
-  }
-
-  function refresh(id) { const e = S.cards.get(id); const p = S.posts.find(x => x.id === id); if (e && p) e.update(p); renderStats(); }
+  function refresh(id) { const e = S.cards.get(id); const p = S.posts.find(x => x.id === id); if (e && p) e.update(p); }
 
   /* ---------- 화면 그리기 ---------- */
-  function renderStats() {
-    const ps = S.posts;
-    $('st-posts').textContent = ps.length;
-    $('st-likes').textContent = ps.reduce((a, p) => a + (p.like_count || 0), 0);
-    $('st-comments').textContent = ps.reduce((a, p) => a + (Array.isArray(p.comments) ? p.comments.length : 0), 0);
-  }
   function renderTabs() {
     if (!P.tabs) return;
     const box = $('tabs'); box.textContent = '';
@@ -786,7 +732,7 @@ const PAGE = 'juhan';
     }
   }
   function render() {
-    renderStats(); renderWords(); renderTabs();
+    renderTabs();
     const feed = $('feed');
     const list = S.posts.filter(p => S.filter === 'all' || p.to_whom === S.filter);
     if (!list.length) {
