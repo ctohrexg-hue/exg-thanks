@@ -6,7 +6,7 @@
 <title>유진·수연에게</title>
 <meta name="description" content="이유진님, 김수연님께 보내는 마음을 모아요.">
 <meta property="og:title" content="유진님, 수연님께 마음을 남겨 주세요">
-<meta property="og:description" content="롤링페이퍼 · 글, 사진, 영상 무엇이든 좋아요 · 11월 30일 마감">
+<meta property="og:description" content="롤링페이퍼 · 글, 사진, 영상 무엇이든 좋아요 · 11월 25일 마감">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#FCEFE2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -362,13 +362,13 @@ const PAGE = 'ys';
 /* ========================================================================== */
 
 (() => {
-  const DEADLINE = new Date(2026, 10, 30);
+  const DEADLINE = new Date(2026, 10, 25);
   const PAGES = {
     juhan: {
       names: [['juhan', '주한님']],
       recip: { juhan: '주한님' },
       chips: null, tabs: null, def: 'juhan',
-      lede: '함께 보낸 시간을 담아 주한님께 전하려고 해요. 하고 싶은 말이나 사진, 영상 중 편한 걸로 남겨 주세요. 11월 30일까지 모아서 기념 앨범으로 전해 드릴게요.'
+      lede: '함께 보낸 시간을 담아 주한님께 전하려고 해요. 하고 싶은 말이나 사진, 영상 중 편한 걸로 남겨 주세요. 11월 25일까지 모아서 기념 앨범으로 전해 드릴게요.'
     },
     ys: {
       names: [['yujin', '유진님'], ['suyeon', '수연님']],
@@ -376,7 +376,7 @@ const PAGE = 'ys';
       chips: [['yujin', '이유진님께'], ['suyeon', '김수연님께'], ['ys', '두 분 모두에게']],
       tabs: [['all', '전체'], ['yujin', '유진님께'], ['suyeon', '수연님께'], ['ys', '두 분께']],
       def: 'ys',
-      lede: '함께 보낸 시간을 담아 두 분께 전하려고 해요. 하고 싶은 말이나 사진, 영상 중 편한 걸로 남겨 주세요. 11월 30일까지 모아서 두 분께 각자의 기념 앨범으로 전해 드릴게요.'
+      lede: '함께 보낸 시간을 담아 두 분께 전하려고 해요. 하고 싶은 말이나 사진, 영상 중 편한 걸로 남겨 주세요. 11월 25일까지 모아서 두 분께 각자의 기념 앨범으로 전해 드릴게요.'
     }
   };
   const P = PAGES[PAGE] || PAGES.juhan;
@@ -463,7 +463,7 @@ const PAGE = 'ys';
     const t = new Date(); t.setHours(0, 0, 0, 0);
     const n = Math.round((DEADLINE - t) / 86400000);
     const box = $('dday');
-    if (n > 0) { box.append('11월 30일 마감 · '); box.append(el('b', null, 'D-' + n)); }
+    if (n > 0) { box.append('11월 25일 마감 · '); box.append(el('b', null, 'D-' + n)); }
     else if (n === 0) box.append(el('b', null, '오늘 마감이에요'));
     else box.textContent = '모으기가 끝났어요. 남겨 주신 마음 고맙습니다.';
   })();
